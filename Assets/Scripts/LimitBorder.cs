@@ -16,11 +16,16 @@ namespace BlackBalls
             if (ec != null)
             {
                 Destroy(ec.gameObject);
+                if (OnEntityEnter != null)
+                {
+                    OnEntityEnter();
+                }
             }
 
-            if (OnEntityEnter != null)
+            Boids.BoidController bc = other.GetComponent<Boids.BoidController>();
+            if (bc != null)
             {
-                OnEntityEnter();
+
             }
         }
 

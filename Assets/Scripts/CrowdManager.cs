@@ -12,6 +12,8 @@ namespace BlackBalls
 
         public LimitBorder[] limitBorder;
 
+        private 
+
         void Start()
         {
             foreach (var border in limitBorder)

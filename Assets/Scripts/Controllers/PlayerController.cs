@@ -15,6 +15,8 @@ namespace BlackBalls
 
         float timer;
 
+        public TrailZoneManager trailZoneManager;
+
         void Start()
         {
         }
@@ -39,12 +41,22 @@ namespace BlackBalls
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                if (finalVelocity > 2f)
+                if (finalVelocity > 1f)
                 {
-                    Trailzone newZone = Instantiate(trailzonePrefab, transform.position, Quaternion.identity, zonesParent).GetComponent<Trailzone>();
-                    
-                    newZone.force = finalVelocity;
-                    newZone.direction = sprite.up;
+                    if (trailZoneManager)
+                    {
+                        TrailBoidZone newZone = Instantiate(trailzonePrefab, transform.position, Quaternion.identity, zonesParent).GetComponent<TrailBoidZone>();
+                        newZone.force = finalVelocity;
+                        newZone.range = newZone.transform.localScale.x;
+                        newZone.direction = sprite.up;
+                        trailZoneManager.trails.Add(newZone);
+                    }
+                    else
+                    {
+                        Trailzone newZone = Instantiate(trailzonePrefab, transform.position, Quaternion.identity, zonesParent).GetComponent<Trailzone>();
+                        newZone.force = finalVelocity;
+                        newZone.direction = sprite.up;
+                    }
                 }
                 timer = 0.1f;
             }
