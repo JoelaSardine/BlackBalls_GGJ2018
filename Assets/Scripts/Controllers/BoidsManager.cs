@@ -6,19 +6,22 @@ namespace BlackBalls.Boids
 {
     public class BoidsManager : MonoBehaviour
     {
-        public int followers;
+        public int followersCount;
 
+        [Header("To link")]
         public TrailZoneManager trailZoneManager;
-        public List<BoidController> entities;
         public PlayerController player;
         public SpecialBoid theOtherOne;
 
-        public List<StreamPoint> streamPoints;
+        private List<BoidController> entities;
+        private List<StreamPoint> streamPoints;
 
+        [Header("Spawn values")]
         public GameObject entityPrefab;
         public int entityCount;
         public Vector2 entitySpawnSurface;
 
+        [Header("Ranges")]
         public float detectionRange = 10f;
         public float repulsionRange = 1f;
 
@@ -49,7 +52,8 @@ namespace BlackBalls.Boids
 
         void Update()
         {
-            followers = 0;
+            followersCount = 0;
+
             foreach (var boid in entities)
             {
                 if (boid == theOtherOne)
@@ -62,7 +66,7 @@ namespace BlackBalls.Boids
                 }
             }
 
-            Debug.Log("Followers = " + followers);
+            Debug.Log("Followers = " + followersCount);
         }
 
         private void UpdateOtherOne()
@@ -111,7 +115,7 @@ namespace BlackBalls.Boids
                                     + repulsion * repulsionForce
                                     + imitation * imitationForce;
             }
-            else
+            else // is not following player
             {
                 UpdateBoid(theOtherOne);
 
@@ -165,6 +169,7 @@ namespace BlackBalls.Boids
             repulsion = repulsion.normalized;
             imitation = imitation.normalized;
 
+            // Repulsion by player
             if ((player.transform.position - pos).sqrMagnitude <= repulsionRange * repulsionRange)
             {
                 repulsion += (pos - player.transform.position);
@@ -178,8 +183,7 @@ namespace BlackBalls.Boids
                     streaming += point.Direction;
                 }
             }
-
-
+            
             // Trail
             for (int i = trailZoneManager.trails.Count - 1; i >= 0; --i)
             {
@@ -188,13 +192,14 @@ namespace BlackBalls.Boids
                 {
                     follow = zone.direction;
                     boid.isFollowing = true;
-                    ++followers;
+                    ++followersCount;
                     break;
                 }
             }
-
+            
             CheckLevelBorders(boid, pos);
 
+            // Apply to boid velocity
             boid.targetVelocity = cohesion * cohesionForce
                                 + repulsion * repulsionForce
                                 + imitation * imitationForce
