@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="4072029455" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\New_SoundBank</ObjectPath>
+			<ShortName>New_SoundBank</ShortName>
+			<Path>New_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3174792496" Name="Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY" ObjectPath="\Events\Default Work Unit\Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="66487676" Language="SFX">
+					<ShortName>AIR CONDITIONING drone low vibration craquement close cnam MSXY.wav</ShortName>
+					<Path>SFX\AIR CONDITIONING drone low vibration craquement close cnam MSXY_1C9C67B2.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

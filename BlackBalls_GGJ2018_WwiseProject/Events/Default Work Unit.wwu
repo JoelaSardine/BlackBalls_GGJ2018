@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B5DB9BAB-8545-416B-9BA7-6B19A9B0FFDD}" SchemaVersion="85">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{B5DB9BAB-8545-416B-9BA7-6B19A9B0FFDD}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY" ID="{244CFBEE-0AF1-4A8C-8CE0-34C74695F466}">
+					<ChildrenList>
+						<Action Name="" ID="{CF81EE4E-6FAB-46A9-A414-3E9D055A7000}" ShortID="434318984">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AIR CONDITIONING drone low vibration craquement close cnam MSXY" ID="{5B59201E-3CBB-4642-A807-FA4A0373577A}" WorkUnitID="{F2EBF935-B694-4C2E-8108-97032C74AD63}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
