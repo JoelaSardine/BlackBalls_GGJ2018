@@ -101,6 +101,7 @@ MonoBehaviour:
   streams: []
   sprite: {fileID: 4678928931522910}
   drag: 0.2
+  trailVelocity: {x: 0, y: 0, z: 0}
   ImpulseDelay: 1
 --- !u!135 &135104791887682688
 SphereCollider:
@@ -112,7 +113,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212179491803410644
 SpriteRenderer:

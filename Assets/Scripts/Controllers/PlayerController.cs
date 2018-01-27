@@ -30,20 +30,20 @@ namespace BlackBalls
                 velocity = velocity.normalized * maxSpeed;
             }
 
-            ManageTrailZone();
+            ManageTrailZone(finalVelocity.magnitude);
         }
 
 
-        private void ManageTrailZone()
+        private void ManageTrailZone(float finalVelocity)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                if (velocity.sqrMagnitude > 5f)
+                if (finalVelocity > 2f)
                 {
                     Trailzone newZone = Instantiate(trailzonePrefab, transform.position, Quaternion.identity, zonesParent).GetComponent<Trailzone>();
                     
-                    newZone.force = velocity.magnitude;
+                    newZone.force = finalVelocity;
                     newZone.direction = sprite.up;
                 }
                 timer = 0.1f;
