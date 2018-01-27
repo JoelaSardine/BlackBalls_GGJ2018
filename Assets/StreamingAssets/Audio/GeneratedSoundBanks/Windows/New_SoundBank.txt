@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3174792496	Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY			\Default Work Unit\Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	511972637	AIR CONDITIONING drone low vibration craquement close cnam MSXY	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\18.005.GGJ.02\.cache\Windows\SFX\AIR CONDITIONING drone low vibration craquement close cnam MSXY_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\AIR CONDITIONING drone low vibration craquement close cnam MSXY		8282580
+
