@@ -13,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Trail
+  - Player
+  - IA
+  - BordersIA
+  - BordersPlayer
+  - Streams
   - 
   - 
   - 

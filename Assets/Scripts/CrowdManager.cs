@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrowdManager : MonoBehaviour
+namespace BlackBalls
 {
-    public GameObject entityPrefab;
-    public int entityCount;
-    public Vector2 entitySpawnSurface;
-
-    void Start()
+    public class CrowdManager : MonoBehaviour
     {
-        float x, y;
-        for (int i = 0; i < entityCount; i++)
+        public GameObject entityPrefab;
+        public int entityCount;
+        public Vector2 entitySpawnSurface;
+
+        public LimitBorder[] limitBorder;
+
+        void Start()
         {
-            x = Random.Range(-entitySpawnSurface.x / 2, entitySpawnSurface.x / 2);
-            y = Random.Range(-entitySpawnSurface.y / 2, entitySpawnSurface.y / 2);
+            foreach (var border in limitBorder)
+            {
+                border.OnEntityEnter += OnEntityIsDestroyed;
+            }
+
+            float x, y;
+            for (int i = 0; i < entityCount; i++)
+            {
+                x = Random.Range(-entitySpawnSurface.x / 2, entitySpawnSurface.x / 2);
+                y = Random.Range(-entitySpawnSurface.y / 2, entitySpawnSurface.y / 2);
+                Instantiate(entityPrefab, new Vector3(x, y, 0), Quaternion.identity, transform);
+            }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        void OnEntityIsDestroyed()
+        {
+            float x = Random.Range(-entitySpawnSurface.x / 2, entitySpawnSurface.x / 2);
+            float y = Random.Range(-entitySpawnSurface.y / 2, entitySpawnSurface.y / 2);
             Instantiate(entityPrefab, new Vector3(x, y, 0), Quaternion.identity, transform);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

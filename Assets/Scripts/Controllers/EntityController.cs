@@ -20,15 +20,15 @@ namespace BlackBalls
 
         void Update()
         {
-            AtUpdate();
-
             Vector3 finalVelocity = velocity;
+
+            AtUpdate(ref finalVelocity);
             ApplyStreams(ref finalVelocity);
 
             transform.position += finalVelocity * Time.deltaTime;
             velocity *= (1 - drag);
 
-            if (velocity.sqrMagnitude >= 0.1)
+            if (velocity.sqrMagnitude >= 10)
             {
                 LookAtDirection(velocity);
             }
@@ -38,7 +38,7 @@ namespace BlackBalls
             }
         }
 
-        protected virtual void AtUpdate()
+        protected virtual void AtUpdate(ref Vector3 finalVelocity)
         {
 
         }
