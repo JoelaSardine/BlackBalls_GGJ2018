@@ -28,7 +28,14 @@ namespace BlackBalls
             transform.position += finalVelocity * Time.deltaTime;
             velocity *= (1 - drag);
 
-            LookAtDirection();
+            if (velocity.sqrMagnitude >= 0.1)
+            {
+                LookAtDirection(velocity);
+            }
+            else
+            {
+                LookAtDirection(finalVelocity);
+            }
         }
 
         protected virtual void AtUpdate()
@@ -36,9 +43,9 @@ namespace BlackBalls
 
         }
 
-        private void LookAtDirection()
+        private void LookAtDirection(Vector3 direction)
         {
-            Vector3 veloOne = velocity.normalized;
+            Vector3 veloOne = direction.normalized;
             if (veloOne.sqrMagnitude >= 0.1f)
             {
                 Vector3 rotation = new Vector3();

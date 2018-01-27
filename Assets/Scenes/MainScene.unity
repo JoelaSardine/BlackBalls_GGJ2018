@@ -285,13 +285,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 535199288}
-  m_LocalRotation: {x: -0.49999973, y: 0.50000024, z: 0.49999985, w: 0.5000003}
-  m_LocalPosition: {x: -0, y: -4.83, z: -1.15}
+  m_LocalRotation: {x: -0.50000036, y: -0.49999976, z: 0.5000005, w: -0.49999952}
+  m_LocalPosition: {x: 0, y: 4.57, z: -1.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 816571461}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 270}
 --- !u!199 &535199290
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -406,7 +406,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2103594011
+  randomSeed: 512579760
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3851,7 +3851,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 867917281
+  randomSeed: -1909393821
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7207,7 +7207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0, z: 0}
-  maxForce: 1.5
+  maxForce: 0.5
 --- !u!1 &816571460
 GameObject:
   m_ObjectHideFlags: 0
@@ -7263,7 +7263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: -1, z: 0}
-  maxForce: 1.5
+  maxForce: 1
 --- !u!1 &1280287084
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,8 +7306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d17abbb0957674459c0abe9d196d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1, z: 0}
-  maxForce: 1.5
+  direction: {x: 0, y: 2, z: 0}
+  maxForce: 0.5
 --- !u!65 &1280287087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7537,7 +7537,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2103594011
+  randomSeed: -435028288
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11078,8 +11078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d17abbb0957674459c0abe9d196d17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1, z: 0}
-  maxForce: 1.5
+  direction: {x: -3.45, y: 2, z: 0}
+  maxForce: 0.5
 --- !u!4 &1962611825
 Transform:
   m_ObjectHideFlags: 0
