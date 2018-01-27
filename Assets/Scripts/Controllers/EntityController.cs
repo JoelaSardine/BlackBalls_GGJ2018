@@ -10,32 +10,46 @@ namespace BlackBalls
         private List<Vector3> streamsVelo = new List<Vector3>();
         private Vector3 residualStreamVelocity;
 
+        protected Vector3 finalVelocity;
         protected Vector3 velocity;
         public Transform sprite;
         public float drag;
+
+        public Vector3 trailVelocity;
 
         void Start()
         {
         }
 
-        void Update()
+        void FixedUpdate()
         {
-            Vector3 finalVelocity = velocity;
+            finalVelocity = velocity;
+            
+            if (trailVelocity.sqrMagnitude < 1f)
+            {
+                ApplyStreams(ref finalVelocity);
+            }
+            else
+            {
+                finalVelocity += trailVelocity.normalized;
+            }
 
             AtUpdate(ref finalVelocity);
-            ApplyStreams(ref finalVelocity);
 
             transform.position += finalVelocity * Time.deltaTime;
             velocity *= (1 - drag);
 
             if (velocity.sqrMagnitude >= 10)
             {
+                // Only for player
                 LookAtDirection(velocity);
             }
             else
             {
                 LookAtDirection(finalVelocity);
             }
+
+            trailVelocity = Vector3.zero;
         }
 
         protected virtual void AtUpdate(ref Vector3 finalVelocity)

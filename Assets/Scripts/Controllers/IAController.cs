@@ -30,15 +30,5 @@ namespace BlackBalls
             rdm.y += y_accel;
             //finalVelocity += rdm.normalized;
         }
-
-        private void OnTriggerStay(Collider other)
-        {
-            //EntityController ec = other.GetComponent<EntityController>();
-            //if (ec != null)
-            //{
-            //    Vector3 repulsion = (transform.position - ec.transform.position).normalized;
-            //    velocity += repulsion * 0.1f;
-            //}
-        }
     }
 }
