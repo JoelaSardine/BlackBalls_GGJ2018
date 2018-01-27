@@ -7,7 +7,7 @@ namespace BlackBalls
     public class StreamZone : MonoBehaviour
     {
         public Vector3 direction;
-        public float force;
+        public float maxForce;
 
         // Use this for initialization
         void Start()
@@ -23,21 +23,19 @@ namespace BlackBalls
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Enter " + other.name);
+            EntityController ec = other.GetComponent<EntityController>();
+            if (ec != null)
+            {
+                ec.AddStream(this);
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            Debug.Log("Exit " + other.name);
-        }
-
-        private void OnTriggerStay(Collider other)
-        {
-            Rigidbody rb = other.GetComponent<Rigidbody>();
-
-            if (null != rb)
+            EntityController ec = other.GetComponent<EntityController>();
+            if (ec != null)
             {
-                rb.AddForce(direction * force);
+                ec.RemoveStream(this);
             }
         }
 
