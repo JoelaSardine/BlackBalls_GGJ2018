@@ -23,12 +23,14 @@ public class SplineStreamInspector : Editor {
 	private int streamPointCount = stepsPerCurve;
 
 	private void generatePoints() {
-		//Destroy old points
-		foreach (Transform point in spline.transform) {
-			GameObject.DestroyImmediate (point.gameObject);
-		}
+        //Destroy old points
+        int count = spline.transform.childCount;
+        for (int i = 0; i < count; i++)
+        {
+            GameObject.DestroyImmediate(spline.transform.GetChild(0).gameObject);
+        }
 
-		for (int i = 0; i <= streamPointCount; i++) {
+        for (int i = 0; i <= streamPointCount; i++) {
 			GameObject point = new GameObject ();
 			point.name = "StreamPoint";
 			point.transform.position = spline.GetPoint (i / (float)streamPointCount);
@@ -46,10 +48,12 @@ public class SplineStreamInspector : Editor {
 		
 	private void showDeletePointsButton() {
 		if (GUILayout.Button ("Delete stream points")) {
-			//Destroy old points
-			foreach (Transform point in spline.transform) {
-				GameObject.DestroyImmediate (point.gameObject);
-			}
+            //Destroy old points
+            int count = spline.transform.childCount;
+            for (int i = 0; i < count; i++)
+            {
+                GameObject.DestroyImmediate(spline.transform.GetChild(0).gameObject);
+            }
 		}
 	}
 
