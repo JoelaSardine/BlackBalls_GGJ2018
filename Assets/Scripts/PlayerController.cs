@@ -4,22 +4,26 @@ using UnityEngine;
 
 namespace BlackBalls
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : EntityController
     {
-        private Rigidbody rb;
-
-        public float speedForce = 100f;
+        //private Rigidbody rb;
+        public float acceleration = 1f;
+        public float maxSpeed = 1f;
 
         void Start()
         {
-            rb = GetComponent<Rigidbody>();
         }
 
-        void Update()
+        protected override void AtUpdate()
         {
             // Receive Inputs
+            velocity.x += Input.GetAxis("Horizontal") * acceleration;
+            velocity.y += Input.GetAxis("Vertical") * acceleration;
 
-            rb.AddForce(Input.GetAxis("Horizontal") * speedForce, Input.GetAxis("Vertical") * speedForce, 0);
+            if (velocity.sqrMagnitude >= maxSpeed * maxSpeed)
+            {
+                velocity = velocity.normalized * maxSpeed;
+            }
         }
 
         void Move()
