@@ -16,18 +16,158 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B5DB9BAB-8545-416B-9BA7-6B19A9B0FFDD}'
-    m_lastTimePsrt1: -1092171280
-    m_lastTimePart2: -1999280711
+    m_lastTimePsrt1: 40882698
+    m_lastTimePart2: -1999280586
     List:
-    - Name: Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY
-      Path: Default Work Unit\Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY
+    - Name: Play_catchCall
+      Path: Default Work Unit\Play_catchCall
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_AIR_CONDITIONING_drone_low_vibration_craquement_close_cnam_MSXY
+      - ElementName: Play_catchCall
         ObjectType: 3
-      ID: -1120174800
-      Guid: eefb4c24f10a8c4a8ce034c74695f466
+      ID: 1998905855
+      Guid: aed761be3fba5a499456d16b39fa10bc
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_companion
+      Path: Default Work Unit\Play_companion
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_companion
+        ObjectType: 3
+      ID: -1977041640
+      Guid: fda19abfd3ef31479580a644da2b4573
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_companionMating
+      Path: Default Work Unit\Play_companionMating
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_companionMating
+        ObjectType: 3
+      ID: -1324376718
+      Guid: 4e8a2eb3a1a09a44b488c4cbe8f444b0
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_impulse
+      Path: Default Work Unit\Play_impulse
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impulse
+        ObjectType: 3
+      ID: -1547316117
+      Guid: 076f50ce80c46642af175f95740b4a88
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_menuMusicSwitch
+      Path: Default Work Unit\Play_menuMusicSwitch
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_menuMusicSwitch
+        ObjectType: 3
+      ID: -2096264188
+      Guid: e41d9f813ee7db40b396473149c41b3c
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_musBlend
+      Path: Default Work Unit\Play_musBlend
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_musBlend
+        ObjectType: 3
+      ID: -422417664
+      Guid: 345994af62a5a44f9bf1e59e913022ca
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_musFin
+      Path: Default Work Unit\Play_musFin
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_musFin
+        ObjectType: 3
+      ID: -895012330
+      Guid: f6172566592e0f47ac36a8422200950a
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_ocean
+      Path: Default Work Unit\Play_ocean
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_ocean
+        ObjectType: 3
+      ID: 1724638476
+      Guid: bf5fa700ea50124784929141b906e3af
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_streamIn
+      Path: Default Work Unit\RAIE\Play_streamIn
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RAIE
+        ObjectType: 4
+      - ElementName: Play_streamIn
+        ObjectType: 3
+      ID: -443901069
+      Guid: 9ed150aec2fdef4ea9e9e6cc156b3241
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_streamOut
+      Path: Default Work Unit\RAIE\Play_streamOut
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RAIE
+        ObjectType: 4
+      - ElementName: Play_streamOut
+        ObjectType: 3
+      ID: -987521010
+      Guid: 1d2e0416d3f0434d801428b25d0b8216
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_swimIn
+      Path: Default Work Unit\RAIE\Play_swimIn
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RAIE
+        ObjectType: 4
+      - ElementName: Play_swimIn
+        ObjectType: 3
+      ID: -423099305
+      Guid: 9e49d6495b0dda43b85eeec1feb135a6
+      minDuration: 0
+      maxDuration: 0
+      maxAttenuation: 0
+    - Name: Play_swimOut
+      Path: Default Work Unit\RAIE\Play_swimOut
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RAIE
+        ObjectType: 4
+      - ElementName: Play_swimOut
+        ObjectType: 3
+      ID: -1662826646
+      Guid: e9df0574ca2a96418f445a65237d85a5
       minDuration: 0
       maxDuration: 0
       maxAttenuation: 0
@@ -35,59 +175,128 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{E78037C1-25CB-438C-B1DB-F8F51FAA2B9C}'
-    m_lastTimePsrt1: -1092010861
-    m_lastTimePart2: -1999280711
+    m_lastTimePsrt1: -257616678
+    m_lastTimePart2: -1999280715
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{6BD56EF6-03C5-4B10-918B-203BE51064A5}'
-    m_lastTimePsrt1: -1091745088
-    m_lastTimePart2: -1999280711
-    List: []
+    m_lastTimePsrt1: 164098157
+    m_lastTimePart2: -1999280592
+    List:
+    - Name: menuState
+      Path: Default Work Unit\menuState
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: menuState
+        ObjectType: 9
+      ID: 1548586727
+      Guid: 549e670b6ec04846b3e76235fc291447
+      values:
+      - menuCredit
+      - menuIn
+      - menuOut
+      - None
+      ValueIcons:
+      - ElementName: menuCredit
+        ObjectType: 8
+      - ElementName: menuIn
+        ObjectType: 8
+      - ElementName: menuOut
+        ObjectType: 8
+      - ElementName: None
+        ObjectType: 8
+      valueIDs: 37e7f36055cb4f1e7c10ac01db3ba32c
+      ValueGuids:
+      - bytes: a5820b95bd73bd4dad9c8491e3de06a8
+      - bytes: f6c4072ebf229e4eb1964ea0ea378791
+      - bytes: f17656da45068440a1b17bbd45d0f4f0
+      - bytes: b8c2178ae04a66409408c7b82b776ab5
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{E1041D43-B9B2-4078-A734-201AA6B046B2}'
-    m_lastTimePsrt1: -1091694993
-    m_lastTimePart2: -1999280711
-    List: []
+    m_lastTimePsrt1: -499741892
+    m_lastTimePart2: -1999280596
+    List:
+    - Name: companionMood
+      Path: Default Work Unit\companionMood
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: companionMood
+        ObjectType: 11
+      ID: 883689496
+      Guid: 6a6fd5bcb239724ab2e8928c1754440f
+      values:
+      - negative
+      - neutral
+      - positive
+      ValueIcons:
+      - ElementName: negative
+        ObjectType: 10
+      - ElementName: neutral
+        ObjectType: 10
+      - ElementName: positive
+        ObjectType: 10
+      valueIDs: 283081fb6ab6f82780ad1947
+      ValueGuids:
+      - bytes: 8a54d7ecc7cf5f4c89c0796810071c56
+      - bytes: 77db9d57e0100243a898df5112e4bc48
+      - bytes: 83a8b7724d4e20459c63930a3375aaeb
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{5B0394C3-F26F-48E0-AE76-C8F65E2912F7}'
-    m_lastTimePsrt1: -1091890537
-    m_lastTimePart2: -1999280711
+    m_lastTimePsrt1: -1635092425
+    m_lastTimePart2: -1999280704
+    List: []
+  - PhysicalPath: SoundBanks\MainSoundBankUnit.wwu
+    ParentPhysicalPath: 
+    Guid: '{17DCED0C-9EEC-4C71-AB1E-57111A696D27}'
+    m_lastTimePsrt1: 1243951905
+    m_lastTimePart2: -1999280586
     List:
-    - Name: New_SoundBank
-      Path: Default Work Unit\New_SoundBank
+    - Name: mainSoundBank
+      Path: MainSoundBankUnit\mainSoundBank
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: MainSoundBankUnit
         ObjectType: 12
-      - ElementName: New_SoundBank
+      - ElementName: mainSoundBank
         ObjectType: 7
-      ID: -222937841
-      Guid: 04521e522496d8409598748ddae9540c
+      ID: 534561221
+      Guid: d08087658b63c84d8da300b908b5339e
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{243E708E-362A-4CC9-8D7F-FF6283103BB4}'
-    m_lastTimePsrt1: -1092156237
-    m_lastTimePart2: -1999280711
-    List: []
+    m_lastTimePsrt1: 373908659
+    m_lastTimePart2: -1999280592
+    List:
+    - Name: density
+      Path: Default Work Unit\density
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: density
+        ObjectType: 13
+      ID: 1551159691
+      Guid: 7fd76a72caeaef40a293bc49b96b293e
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B30A3AA7-8384-4EB8-8EEB-44BF05151F97}'
-    m_lastTimePsrt1: -1091745088
-    m_lastTimePart2: -1999280711
+    m_lastTimePsrt1: -255985583
+    m_lastTimePart2: -1999280715
     List: []
   AcousticTextureWwu:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{4CF83140-DA77-4A6A-8AED-20893D3A0DE7}'
-    m_lastTimePsrt1: -1091765203
-    m_lastTimePart2: -1999280711
+    m_lastTimePsrt1: -256646033
+    m_lastTimePart2: -1999280715
     List: []
   ExpandedItems:
   - /BlackBalls_GGJ2018_WwiseProject
