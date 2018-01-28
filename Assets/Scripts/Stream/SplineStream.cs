@@ -4,7 +4,7 @@ using System;
 public class SplineStream : MonoBehaviour {
 
 	[SerializeField]
-	private Vector3[] points;
+	public Vector3[] points;
 
 	[SerializeField]
 	private BezierControlPointMode[] modes;
