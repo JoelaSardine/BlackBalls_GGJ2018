@@ -17,6 +17,9 @@ namespace BlackBalls
 
         public TrailZoneManager trailZoneManager;
 
+        public Boids.SpecialBoid theOtherOne;
+        private bool hasKnownLove = false;
+
         void Start()
         {
         }
@@ -41,12 +44,12 @@ namespace BlackBalls
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                if (finalVelocity > 1f)
+                if (finalVelocity >= 3.5f)
                 {
                     if (trailZoneManager)
                     {
                         TrailBoidZone newZone = Instantiate(trailzonePrefab, transform.position, Quaternion.identity, zonesParent).GetComponent<TrailBoidZone>();
-                        newZone.force = finalVelocity;
+                        newZone.force = finalVelocity - 2f;
                         newZone.range = newZone.transform.localScale.x;
                         newZone.direction = sprite.up;
                         trailZoneManager.trails.Add(newZone);
@@ -59,6 +62,34 @@ namespace BlackBalls
                     }
                 }
                 timer = 0.1f;
+            }
+        }
+
+
+        private void Update()
+        {
+            if (hasKnownLove)
+            {
+                if (theOtherOne.isFollowingPlayer = true)
+                {
+                    if (Vector3.SqrMagnitude(transform.position - theOtherOne.transform.position) >= 25.0f)
+                    {
+                        Debug.Log("Lost");
+                        theOtherOne.isFollowingPlayer = false;
+                    }
+                }
+            }
+            else
+            {
+                if (Input.GetButtonDown("Calin"))
+                {
+                    if (Vector3.SqrMagnitude(transform.position - theOtherOne.transform.position) <= 10.0f)
+                    {
+                        Debug.Log("Calin OK");
+                        hasKnownLove = true;
+                        theOtherOne.isFollowingPlayer = true;
+                    }
+                }
             }
         }
     }

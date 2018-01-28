@@ -11,7 +11,7 @@ namespace BlackBalls
         private Vector3 residualStreamVelocity;
 
         protected Vector3 finalVelocity;
-        protected Vector3 velocity;
+        public Vector3 velocity;
         public Transform sprite;
         public float drag;
 

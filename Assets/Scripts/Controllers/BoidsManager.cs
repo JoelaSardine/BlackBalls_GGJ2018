@@ -49,6 +49,7 @@ namespace BlackBalls.Boids
 
         private List<List<BoidController>> entitiesByRace = new List<List<BoidController>>();
         private List<StreamPoint> streamPoints;
+        private float currentStreamForce;
 
         void Start()
         {
@@ -77,23 +78,15 @@ namespace BlackBalls.Boids
 
         void Update()
         {
+            currentStreamForce = streamForce * (followersCount / 50);
             followersCount = 0;
 
             UpdateAllBoids();
+            UpdateOtherOne();
+            
+            // Must update the OtherOne
 
-            //foreach (var boid in entities)
-            //{
-            //    if (boid == theOtherOne)
-            //    {
-            //        UpdateOtherOne();
-            //    }
-            //    else
-            //    {
-            //        UpdateBoid(boid);
-            //    }
-            //}
-
-            Debug.Log("Followers = " + followersCount);
+            //Debug.Log("Followers = " + followersCount);
         }
 
         private void UpdateAllBoids()
@@ -102,67 +95,76 @@ namespace BlackBalls.Boids
             {
                 foreach (var boid in entitiesByRace[r])
                 {
-                    Vector3 pos = boid.transform.position;
-
-                    boid.targetVelocity = Vector3.zero;
-                    Vector3 cohesion = Vector3.zero;
-                    Vector3 repulsion = Vector3.zero;
-                    Vector3 imitation = Vector3.zero;
-                    Vector3 follow = Vector3.zero;
-                    Vector3 streaming = Vector3.zero; // courants
-                    Vector3 barycenter = Vector3.zero;
-                    boid.isFollowing = false;
-                    int n = 0;
-
-                    ConsiderRace(0, races[r].likes_A1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-                    ConsiderRace(1, races[r].likes_A2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-                    ConsiderRace(2, races[r].likes_B1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-                    ConsiderRace(3, races[r].likes_B2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-                    ConsiderRace(4, races[r].likes_C1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-                    ConsiderRace(5, races[r].likes_C2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
-
-                    cohesion = ((barycenter / n) - pos).normalized;
-                    repulsion = repulsion.normalized;
-                    imitation = imitation.normalized;
-
-                    // Repulsion by player
-                    if ((player.transform.position - pos).sqrMagnitude <= repulsionRange * repulsionRange)
-                    {
-                        repulsion += (pos - player.transform.position);
-                    }
-
-                    // Courants
-                    foreach (var point in streamPoints)
-                    {
-                        if ((point.transform.position - pos).sqrMagnitude < streamDetectionRange * streamDetectionRange)
-                        {
-                            streaming += point.Direction;
-                        }
-                    }
-
-                    // Trail
-                    for (int i = trailZoneManager.trails.Count - 1; i >= 0; --i)
-                    {
-                        TrailBoidZone zone = trailZoneManager.trails[i];
-                        if ((pos - zone.transform.position).sqrMagnitude <= zone.range * zone.range)
-                        {
-                            follow = zone.direction;
-                            boid.isFollowing = true;
-                            ++followersCount;
-                            break;
-                        }
-                    }
-
-                    CheckLevelBorders(boid, pos);
-
-                    // Apply to boid velocity
-                    boid.targetVelocity = cohesion * cohesionForce
-                                        + repulsion * repulsionForce
-                                        + imitation * imitationForce
-                                        + follow * followForce
-                                        + streaming * streamForce;
+                    UpdateOneBoid(boid, 
+                        races[r].likes_A1, races[r].likes_A2, 
+                        races[r].likes_B1, races[r].likes_B2, 
+                        races[r].likes_C1, races[r].likes_C2);
                 }
             }
+        }
+
+        private void UpdateOneBoid(BoidController boid, 
+            bool likesA1, bool likesA2, bool likesB1, bool likesB2, bool likesC1, bool likesC2)
+        {
+            Vector3 pos = boid.transform.position;
+
+            boid.targetVelocity = Vector3.zero;
+            Vector3 cohesion = Vector3.zero;
+            Vector3 repulsion = Vector3.zero;
+            Vector3 imitation = Vector3.zero;
+            Vector3 follow = Vector3.zero;
+            Vector3 streaming = Vector3.zero; // courants
+            Vector3 barycenter = Vector3.zero;
+            boid.isFollowing = false;
+            int n = 0;
+
+            ConsiderRace(0, likesA1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+            ConsiderRace(1, likesA2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+            ConsiderRace(2, likesB1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+            ConsiderRace(3, likesB2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+            ConsiderRace(4, likesC1, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+            ConsiderRace(5, likesC2, pos, ref repulsion, ref imitation, ref barycenter, ref n);
+
+            cohesion = ((barycenter / n) - pos).normalized;
+            repulsion = repulsion.normalized;
+            imitation = imitation.normalized;
+
+            // Repulsion by player
+            if ((player.transform.position - pos).sqrMagnitude <= repulsionRange * repulsionRange)
+            {
+                repulsion += (pos - player.transform.position);
+            }
+
+            // Courants
+            foreach (var point in streamPoints)
+            {
+                if ((point.transform.position - pos).sqrMagnitude < streamDetectionRange * streamDetectionRange)
+                {
+                    streaming += point.Direction;
+                }
+            }
+
+            // Trail
+            for (int i = trailZoneManager.trails.Count - 1; i >= 0; --i)
+            {
+                TrailBoidZone zone = trailZoneManager.trails[i];
+                if ((pos - zone.transform.position).sqrMagnitude <= zone.range * zone.range)
+                {
+                    follow = zone.direction;
+                    boid.isFollowing = true;
+                    ++followersCount;
+                    break;
+                }
+            }
+
+            CheckLevelBorders(boid, pos);
+
+            // Apply to boid velocity
+            boid.targetVelocity = cohesion * cohesionForce
+                                + repulsion * repulsionForce
+                                + imitation * imitationForce
+                                + follow * followForce
+                                + streaming * currentStreamForce;
         }
 
         private void ConsiderRace(int targetRace, bool like, Vector3 pos, ref Vector3 repulsion, ref Vector3 imitation, ref Vector3 barycenter, ref int n)
@@ -183,64 +185,53 @@ namespace BlackBalls.Boids
             }
         }
 
-        //private void UpdateOtherOne()
-        //{
-        //    SpecialBoid boid = theOtherOne;
-        //    Vector3 pos = boid.transform.position;
+        private void UpdateOtherOne()
+        {
+            Vector3 pos = theOtherOne.transform.position;
 
-        //    if (boid.isFollowingPlayer)
-        //    {
-        //        boid.targetVelocity = Vector3.zero;
-        //        Vector3 repulsion = Vector3.zero;
-        //        Vector3 imitation = player.sprite.up;
-        //        Vector3 cohesion = (player.transform.position - pos);
+            if (theOtherOne.isFollowingPlayer)
+            {
+                theOtherOne.targetVelocity = Vector3.zero;
+                Vector3 cohesion = Vector3.zero;
+                Vector3 repulsion = Vector3.zero;
+                Vector3 imitation = Vector3.zero;
+                Vector3 streaming = Vector3.zero; // courants
+                Vector3 barycenter = Vector3.zero;
+                theOtherOne.isFollowing = false;
+                int n = 0;
 
-        //        foreach (var other in entities)
-        //        {
-        //            // Doesn't consider himself
-        //            if (other == boid) continue;
+                cohesion = (player.transform.position - pos).normalized;
+                imitation = player.velocity.normalized;
 
-        //            float squaredDistance = (other.transform.position - pos).sqrMagnitude;
-        //            if (squaredDistance < detectionRange * detectionRange)
-        //            {
-        //                // Repulsion
-        //                if (squaredDistance <= repulsionRange * repulsionRange)
-        //                {
-        //                    repulsion += (pos - other.transform.position);
-        //                }
-        //            }
-        //        }
+                // Repulsion by player
+                if ((player.transform.position - pos).sqrMagnitude <= repulsionRange * repulsionRange)
+                {
+                    repulsion += (pos - player.transform.position);
+                }
 
-        //        repulsion = repulsion.normalized;
+                // Courants
+                foreach (var point in streamPoints)
+                {
+                    if ((point.transform.position - pos).sqrMagnitude < streamDetectionRange * streamDetectionRange)
+                    {
+                        streaming += point.Direction;
+                    }
+                }
 
-        //        float squaredDistance2 = (player.transform.position - pos).sqrMagnitude;
-        //        if (squaredDistance2 >= detectionRange * repulsionRange)
-        //        {
-        //            Debug.Log("false");
-        //            boid.isFollowingPlayer = false;
-        //        }
+                CheckLevelBorders(theOtherOne, pos);
 
-        //        // Courants
-        //        // TODO
-                
-        //        //CheckLevelBorders(boid, pos);
-
-        //        boid.targetVelocity = cohesion * followForce
-        //                            + repulsion * repulsionForce
-        //                            + imitation * imitationForce;
-        //    }
-        //    else // is not following player
-        //    {
-        //        UpdateBoid(theOtherOne);
-
-        //        float squaredDistance2 = (player.transform.position - pos).sqrMagnitude;
-        //        if (squaredDistance2 <= detectionRange * repulsionRange)
-        //        {
-        //            Debug.Log("true");
-        //            boid.isFollowingPlayer = true;
-        //        }
-        //    }
-        //}
+                // Apply to boid velocity
+                theOtherOne.targetVelocity = cohesion * cohesionForce
+                                    + repulsion * repulsionForce
+                                    + imitation * imitationForce
+                                    //+ follow * followForce
+                                    + streaming * currentStreamForce * 10;
+            }
+            else // is not following player
+            {
+                UpdateOneBoid(theOtherOne, true, true, true, true, true, true);
+            }
+        }
 
         private void UpdateBoidWithOther(Vector3 selfPos, BoidController other, ref Vector3 repulsion)
         {
@@ -275,86 +266,6 @@ namespace BlackBalls.Boids
                 }
             }
         }
-
-        //private void UpdateBoid(BoidController boid)
-        //{
-        //    Vector3 pos = boid.transform.position;
-
-        //    boid.targetVelocity = Vector3.zero;
-        //    Vector3 cohesion = Vector3.zero;
-        //    Vector3 repulsion = Vector3.zero;
-        //    Vector3 imitation = Vector3.zero;
-        //    Vector3 follow = Vector3.zero;
-        //    Vector3 streaming = Vector3.zero; // courants
-        //    Vector3 barycenter = Vector3.zero;
-        //    boid.isFollowing = false;
-        //    int n = 0;
-
-        //    foreach (var other in entities)
-        //    {
-        //        // Doesn't consider himself
-        //        if (other == boid) continue;
-
-        //        float squaredDistance = (other.transform.position - pos).sqrMagnitude;
-        //        if (squaredDistance < detectionRange * detectionRange)
-        //        {
-        //            // Cohesion
-        //            barycenter += other.transform.position;
-        //            n++;
-
-        //            // Imitation
-        //            imitation += other.currentVelocity;
-
-        //            // Repulsion
-        //            if (squaredDistance <= repulsionRange * repulsionRange)
-        //            {
-        //                repulsion += (pos - other.transform.position);
-        //            }
-        //        }
-        //    }
-
-        //    cohesion = ((barycenter / n) - pos).normalized;
-        //    repulsion = repulsion.normalized;
-        //    imitation = imitation.normalized;
-
-        //    // Repulsion by player
-        //    if ((player.transform.position - pos).sqrMagnitude <= repulsionRange * repulsionRange)
-        //    {
-        //        repulsion += (pos - player.transform.position);
-        //    }
-
-        //    // Courants
-        //    foreach (var point in streamPoints)
-        //    {
-        //        if ((point.transform.position - pos).sqrMagnitude < detectionRange * repulsionRange)
-        //        {
-        //            streaming += point.Direction;
-        //        }
-        //    }
-            
-        //    // Trail
-        //    for (int i = trailZoneManager.trails.Count - 1; i >= 0; --i)
-        //    {
-        //        TrailBoidZone zone = trailZoneManager.trails[i];
-        //        if ((pos - zone.transform.position).sqrMagnitude <= zone.range * zone.range)
-        //        {
-        //            follow = zone.direction;
-        //            boid.isFollowing = true;
-        //            ++followersCount;
-        //            break;
-        //        }
-        //    }
-            
-        //    CheckLevelBorders(boid, pos);
-
-        //    // Apply to boid velocity
-        //    boid.targetVelocity = cohesion * cohesionForce
-        //                        + repulsion * repulsionForce
-        //                        + imitation * imitationForce
-        //                        + follow * followForce
-        //                        + streaming * streamForce;
-
-        //}
         
         private void CheckLevelBorders(BoidController boid, Vector3 pos)
         {

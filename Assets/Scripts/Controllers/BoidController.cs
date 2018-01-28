@@ -24,7 +24,7 @@ namespace BlackBalls.Boids
 
         void Update()
         {
-            currentVelocity += targetVelocity * Time.deltaTime;
+            ChangeCurrentVelocity();
             currentVelocity.Normalize();
 
             transform.position += currentVelocity * Time.deltaTime * calculateSpeed();
@@ -33,12 +33,17 @@ namespace BlackBalls.Boids
             Vector3 rotation = new Vector3();
             rotation.z = Mathf.Rad2Deg * (currentVelocity.x < 0 ? Mathf.Acos(currentVelocity.y) : -Mathf.Acos(currentVelocity.y));
             spriteTransform.rotation = Quaternion.Euler(rotation);
-            
+
+        }
+
+        protected virtual void ChangeCurrentVelocity()
+        {
+            currentVelocity += targetVelocity * Time.deltaTime;
         }
 
         protected virtual float calculateSpeed()
         {
-            return isFollowing ? 2 * speed : speed;
+            return isFollowing ? 1.5f * speed : speed;
         }
 
         private void OnDrawGizmosSelected()

@@ -10,7 +10,12 @@ namespace BlackBalls.Boids
         
         protected override float calculateSpeed()
         {
-            return isFollowingPlayer ? speed * 2 : speed;
+            return isFollowingPlayer ? speed * 1.8f : speed;
+        }
+
+        protected override void ChangeCurrentVelocity()
+        {
+            currentVelocity += targetVelocity * (Time.deltaTime * 2);
         }
     }
 }
