@@ -1,0 +1,82 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1724638476	Play_ocean			\Default Work Unit\Play_ocean	
+	1998905855	Play_catchCall			\Default Work Unit\Play_catchCall	
+	2198703108	Play_menuMusicSwitch			\Default Work Unit\Play_menuMusicSwitch	
+	2317925656	Play_companion			\Default Work Unit\Play_companion	
+	2632140650	Play_swimOut			\Default Work Unit\RAIE\Play_swimOut	
+	2747651179	Play_impulse			\Default Work Unit\Play_impulse	
+	2970590578	Play_companionMating			\Default Work Unit\Play_companionMating	
+	3307446286	Play_streamOut			\Default Work Unit\RAIE\Play_streamOut	
+	3399954966	Play_musFin			\Default Work Unit\Play_musFin	
+	3851066227	Play_streamIn			\Default Work Unit\RAIE\Play_streamIn	
+	3871867991	Play_swimIn			\Default Work Unit\RAIE\Play_swimIn	
+	3872549632	Play_musBlend			\Default Work Unit\Play_musBlend	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	883689496	companionMood			\Default Work Unit\companionMood	
+
+Switch	ID	Name	Switch Group			Notes
+	670611050	neutral	companionMood			
+	1192865152	positive	companionMood			
+	4219547688	negative	companionMood			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1548586727	menuState			\Default Work Unit\menuState	
+
+State	ID	Name	State Group			Notes
+	28053628	menuOut	menuState			
+	508545877	menuIn	menuState			
+	748895195	None	menuState			
+	1626597175	menuCredit	menuState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	335629334	menuCredit	menuState	\Interactive Music Hierarchy\Default Work Unit\MENU\menuMusicSwitch\menuMusic\menyMusicLoop		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1551159691	density			\Default Work Unit\density	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	1600927	preEntryLaunchGame_oneShot	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\preEntryLaunchGame_oneShot_9D73A8A6.wem		\Interactive Music Hierarchy\Default Work Unit\MENU\menuMusicSwitch\menuMusic\preEntryLaunchGame_oneShot\preEntryLaunchGame_oneShot		322421
+	70120851	musOrchestreLongWaves	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musOrchestreLongWaves_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musOrchestreLongWaves		1016546
+	78140331	impulse3	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\impulse3_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\impulse\impulse3		92158
+	83394635	catch3	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\catch3_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\catch\catch3		25073
+	107647339	companionMating	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\companionMating_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companionMating		638144
+	142571426	friendNor2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor2_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor2		111793
+	143918077	stream	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\stream_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\stream		745427
+	163463590	friendNeg7	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg7_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg7		98544
+	180271990	musPiano2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musPiano2_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musPiano2		1491668
+	190003872	impulse1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\impulse1_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\impulse\impulse1		99502
+	217891607	friendNeg6	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg6_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg6		93133
+	267320762	catch4	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\catch4_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\catch\catch4		28607
+	322928491	musPiano1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musPiano1_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musPiano1		1847079
+	327989175	swimLoop	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\swimLoop_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\swimLoop		311618
+	329454513	friendNeg2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg2_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg2		97847
+	343962930	friendPos3	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendPos3_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\positive\friendPos3		129237
+	351833681	friendNeg4	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg4_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg4		74411
+	360210774	musChantDry	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musChantDry_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musChantDry		1614593
+	392289567	menyMusicLoop	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\menyMusicLoop_9D73A8A6.wem		\Interactive Music Hierarchy\Default Work Unit\MENU\menuMusicSwitch\menuMusic\menyMusicLoop\menyMusicLoop		390243
+	400049240	catch1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\catch1_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\catch\catch1		34785
+	463777466	friendPos2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendPos2_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\positive\friendPos2		124968
+	464789575	musOrchestreHalf	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musOrchestreHalf_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musOrchestreHalf		874257
+	473610005	musBass	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musBass_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musBass		584936
+	483185173	friendNor4	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor4_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor4		70569
+	489962473	friendNeg5	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg5_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg5		82368
+	530075744	musOrchestreWaveQuarter	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musOrchestreWaveQuarter_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musOrchestreWaveQuarter		1066343
+	566201668	friendNeg8	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg8_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg8		109466
+	597163225	friendPos1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendPos1_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\positive\friendPos1		109516
+	680098644	friendNor5	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor5_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor5		69978
+	689017117	ocean	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\ocean_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\OCEAN\ocean		2136704
+	700077255	friendNor6	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor6_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor6		91994
+	722967207	friendNeg3	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg3_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg3		122268
+	749096944	impulse2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\impulse2_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\impulse\impulse2		96975
+	786285872	friendNeg1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNeg1_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\negative\friendNeg1		76278
+	786291225	swinIn	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\swinIn_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\swinIn		54891
+	864471480	friendNor3	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor3_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor3		97781
+	864857513	catch2	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\catch2_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\catch\catch2		40303
+	867102536	friendNor1	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\friendNor1_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\COMPANION\companion\normal\friendNor1		81855
+	960023070	musFin	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musFin_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musFin		2226188
+	960937803	menuMusicLoopPostEntry	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\menuMusicLoopPostEntry_9D73A8A6.wem		\Interactive Music Hierarchy\Default Work Unit\MENU\menuMusicSwitch\menuMusic\menyMusicLoop\menuMusicLoopPostEntry		393930
+	981234095	menuMusicOutro_del5-345	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\menuMusicOutro_del5-345_9D73A8A6.wem		\Interactive Music Hierarchy\Default Work Unit\MENU\menuMusicSwitch\menuMusicOut\menuMusicOutro_del5-345\menuMusicOutro_del5-345		833864
+	995816873	swimOut	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\swimOut_658ED0DC.wem		\Actor-Mixer Hierarchy\MainAudioUnit\RAIE\swimOut		98839
+	1068322343	musChantWet	C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\WWISE\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\SFX\musChantWet_9D73A8A6.wem		\Actor-Mixer Hierarchy\MainAudioUnit\MUSIQUE\musBlend\musChantWet		1568049
+

@@ -34,7 +34,10 @@ namespace BlackBalls.Boids
             rotation.z = Mathf.Rad2Deg * (currentVelocity.x < 0 ? Mathf.Acos(currentVelocity.y) : -Mathf.Acos(currentVelocity.y));
             spriteTransform.rotation = Quaternion.Euler(rotation);
 
+            AtUpdate();
         }
+
+        protected virtual void AtUpdate() { }
 
         protected virtual void ChangeCurrentVelocity()
         {

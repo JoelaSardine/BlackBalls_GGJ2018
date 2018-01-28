@@ -27,11 +27,11 @@ namespace BlackBalls
             }
         }
 
-        protected override void AtTriggerEnter(Collider other)
-        {}
+        //protected override void AtTriggerEnter(Collider other)
+        //{}
 
-        protected override void AtTriggerExit(Collider other)
-        {}
+        //protected override void AtTriggerExit(Collider other)
+        //{}
 
         private void OnTriggerStay(Collider other)
         {

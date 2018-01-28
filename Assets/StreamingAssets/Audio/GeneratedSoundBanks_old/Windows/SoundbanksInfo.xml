@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Pierre-Marie\Documents\AA PROJETS\18.005.GGJ.02\UNITY\BlackBalls_GGJ2018\BlackBalls_GGJ2018_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="534561221" Language="SFX">
+			<ObjectPath>\SoundBanks\MainSoundBankUnit\mainSoundBank</ObjectPath>
+			<ShortName>mainSoundBank</ShortName>
+			<Path>mainSoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1998905855" Name="Play_catchCall" ObjectPath="\Events\Default Work Unit\Play_catchCall"/>
+				<Event Id="2317925656" Name="Play_companion" ObjectPath="\Events\Default Work Unit\Play_companion"/>
+				<Event Id="2970590578" Name="Play_companionMating" ObjectPath="\Events\Default Work Unit\Play_companionMating"/>
+				<Event Id="2747651179" Name="Play_impulse" ObjectPath="\Events\Default Work Unit\Play_impulse"/>
+				<Event Id="2198703108" Name="Play_menuMusicSwitch" ObjectPath="\Events\Default Work Unit\Play_menuMusicSwitch"/>
+				<Event Id="3872549632" Name="Play_musBlend" ObjectPath="\Events\Default Work Unit\Play_musBlend"/>
+				<Event Id="3399954966" Name="Play_musFin" ObjectPath="\Events\Default Work Unit\Play_musFin"/>
+				<Event Id="1724638476" Name="Play_ocean" ObjectPath="\Events\Default Work Unit\Play_ocean"/>
+				<Event Id="3851066227" Name="Play_streamIn" ObjectPath="\Events\Default Work Unit\RAIE\Play_streamIn"/>
+				<Event Id="3307446286" Name="Play_streamOut" ObjectPath="\Events\Default Work Unit\RAIE\Play_streamOut" MaxAttenuation="0.000000"/>
+				<Event Id="3871867991" Name="Play_swimIn" ObjectPath="\Events\Default Work Unit\RAIE\Play_swimIn"/>
+				<Event Id="2632140650" Name="Play_swimOut" ObjectPath="\Events\Default Work Unit\RAIE\Play_swimOut"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="1600927" Language="SFX">
+					<ShortName>preEntryLaunchGame_oneShot.wav</ShortName>
+					<Path>SFX\preEntryLaunchGame_oneShot_9D73A8A6.wem</Path>
+				</File>
+				<File Id="70120851" Language="SFX">
+					<ShortName>musOrchestreLongWaves.wav</ShortName>
+					<Path>SFX\musOrchestreLongWaves_9D73A8A6.wem</Path>
+				</File>
+				<File Id="78140331" Language="SFX">
+					<ShortName>impulse3.wav</ShortName>
+					<Path>SFX\impulse3_658ED0DC.wem</Path>
+				</File>
+				<File Id="83394635" Language="SFX">
+					<ShortName>catch3.wav</ShortName>
+					<Path>SFX\catch3_658ED0DC.wem</Path>
+				</File>
+				<File Id="107647339" Language="SFX">
+					<ShortName>companionMating.wav</ShortName>
+					<Path>SFX\companionMating_658ED0DC.wem</Path>
+				</File>
+				<File Id="142571426" Language="SFX">
+					<ShortName>friendNor2.wav</ShortName>
+					<Path>SFX\friendNor2_658ED0DC.wem</Path>
+				</File>
+				<File Id="143918077" Language="SFX">
+					<ShortName>stream.wav</ShortName>
+					<Path>SFX\stream_9D73A8A6.wem</Path>
+				</File>
+				<File Id="163463590" Language="SFX">
+					<ShortName>friendNeg7.wav</ShortName>
+					<Path>SFX\friendNeg7_658ED0DC.wem</Path>
+				</File>
+				<File Id="180271990" Language="SFX">
+					<ShortName>musPiano2.wav</ShortName>
+					<Path>SFX\musPiano2_9D73A8A6.wem</Path>
+				</File>
+				<File Id="190003872" Language="SFX">
+					<ShortName>impulse1.wav</ShortName>
+					<Path>SFX\impulse1_658ED0DC.wem</Path>
+				</File>
+				<File Id="217891607" Language="SFX">
+					<ShortName>friendNeg6.wav</ShortName>
+					<Path>SFX\friendNeg6_658ED0DC.wem</Path>
+				</File>
+				<File Id="267320762" Language="SFX">
+					<ShortName>catch4.wav</ShortName>
+					<Path>SFX\catch4_658ED0DC.wem</Path>
+				</File>
+				<File Id="322928491" Language="SFX">
+					<ShortName>musPiano1.wav</ShortName>
+					<Path>SFX\musPiano1_9D73A8A6.wem</Path>
+				</File>
+				<File Id="327989175" Language="SFX">
+					<ShortName>swimLoop.wav</ShortName>
+					<Path>SFX\swimLoop_9D73A8A6.wem</Path>
+				</File>
+				<File Id="329454513" Language="SFX">
+					<ShortName>friendNeg2.wav</ShortName>
+					<Path>SFX\friendNeg2_658ED0DC.wem</Path>
+				</File>
+				<File Id="343962930" Language="SFX">
+					<ShortName>friendPos3.wav</ShortName>
+					<Path>SFX\friendPos3_658ED0DC.wem</Path>
+				</File>
+				<File Id="351833681" Language="SFX">
+					<ShortName>friendNeg4.wav</ShortName>
+					<Path>SFX\friendNeg4_658ED0DC.wem</Path>
+				</File>
+				<File Id="360210774" Language="SFX">
+					<ShortName>musChantDry.wav</ShortName>
+					<Path>SFX\musChantDry_9D73A8A6.wem</Path>
+				</File>
+				<File Id="392289567" Language="SFX">
+					<ShortName>menyMusicLoop.wav</ShortName>
+					<Path>SFX\menyMusicLoop_9D73A8A6.wem</Path>
+				</File>
+				<File Id="400049240" Language="SFX">
+					<ShortName>catch1.wav</ShortName>
+					<Path>SFX\catch1_658ED0DC.wem</Path>
+				</File>
+				<File Id="463777466" Language="SFX">
+					<ShortName>friendPos2.wav</ShortName>
+					<Path>SFX\friendPos2_658ED0DC.wem</Path>
+				</File>
+				<File Id="464789575" Language="SFX">
+					<ShortName>musOrchestreHalf.wav</ShortName>
+					<Path>SFX\musOrchestreHalf_9D73A8A6.wem</Path>
+				</File>
+				<File Id="473610005" Language="SFX">
+					<ShortName>musBass.wav</ShortName>
+					<Path>SFX\musBass_9D73A8A6.wem</Path>
+				</File>
+				<File Id="483185173" Language="SFX">
+					<ShortName>friendNor4.wav</ShortName>
+					<Path>SFX\friendNor4_658ED0DC.wem</Path>
+				</File>
+				<File Id="489962473" Language="SFX">
+					<ShortName>friendNeg5.wav</ShortName>
+					<Path>SFX\friendNeg5_658ED0DC.wem</Path>
+				</File>
+				<File Id="530075744" Language="SFX">
+					<ShortName>musOrchestreWaveQuarter.wav</ShortName>
+					<Path>SFX\musOrchestreWaveQuarter_9D73A8A6.wem</Path>
+				</File>
+				<File Id="566201668" Language="SFX">
+					<ShortName>friendNeg8.wav</ShortName>
+					<Path>SFX\friendNeg8_658ED0DC.wem</Path>
+				</File>
+				<File Id="597163225" Language="SFX">
+					<ShortName>friendPos1.wav</ShortName>
+					<Path>SFX\friendPos1_658ED0DC.wem</Path>
+				</File>
+				<File Id="680098644" Language="SFX">
+					<ShortName>friendNor5.wav</ShortName>
+					<Path>SFX\friendNor5_658ED0DC.wem</Path>
+				</File>
+				<File Id="689017117" Language="SFX">
+					<ShortName>ocean.wav</ShortName>
+					<Path>SFX\ocean_9D73A8A6.wem</Path>
+				</File>
+				<File Id="700077255" Language="SFX">
+					<ShortName>friendNor6.wav</ShortName>
+					<Path>SFX\friendNor6_658ED0DC.wem</Path>
+				</File>
+				<File Id="722967207" Language="SFX">
+					<ShortName>friendNeg3.wav</ShortName>
+					<Path>SFX\friendNeg3_658ED0DC.wem</Path>
+				</File>
+				<File Id="749096944" Language="SFX">
+					<ShortName>impulse2.wav</ShortName>
+					<Path>SFX\impulse2_658ED0DC.wem</Path>
+				</File>
+				<File Id="786285872" Language="SFX">
+					<ShortName>friendNeg1.wav</ShortName>
+					<Path>SFX\friendNeg1_658ED0DC.wem</Path>
+				</File>
+				<File Id="786291225" Language="SFX">
+					<ShortName>swinIn.wav</ShortName>
+					<Path>SFX\swinIn_658ED0DC.wem</Path>
+				</File>
+				<File Id="864471480" Language="SFX">
+					<ShortName>friendNor3.wav</ShortName>
+					<Path>SFX\friendNor3_658ED0DC.wem</Path>
+				</File>
+				<File Id="864857513" Language="SFX">
+					<ShortName>catch2.wav</ShortName>
+					<Path>SFX\catch2_658ED0DC.wem</Path>
+				</File>
+				<File Id="867102536" Language="SFX">
+					<ShortName>friendNor1.wav</ShortName>
+					<Path>SFX\friendNor1_658ED0DC.wem</Path>
+				</File>
+				<File Id="960023070" Language="SFX">
+					<ShortName>musFin.wav</ShortName>
+					<Path>SFX\musFin_658ED0DC.wem</Path>
+				</File>
+				<File Id="960937803" Language="SFX">
+					<ShortName>menuMusicLoopPostEntry.wav</ShortName>
+					<Path>SFX\menuMusicLoopPostEntry_9D73A8A6.wem</Path>
+				</File>
+				<File Id="981234095" Language="SFX">
+					<ShortName>menuMusicOutro_del5-345.wav</ShortName>
+					<Path>SFX\menuMusicOutro_del5-345_9D73A8A6.wem</Path>
+				</File>
+				<File Id="995816873" Language="SFX">
+					<ShortName>swimOut.wav</ShortName>
+					<Path>SFX\swimOut_658ED0DC.wem</Path>
+				</File>
+				<File Id="1068322343" Language="SFX">
+					<ShortName>musChantWet.wav</ShortName>
+					<Path>SFX\musChantWet_9D73A8A6.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

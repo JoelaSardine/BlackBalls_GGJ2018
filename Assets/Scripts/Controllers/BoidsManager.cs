@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace BlackBalls.Boids
     public class BoidsManager : MonoBehaviour
     {
         public int followersCount;
+        public int minFollowerCount;
 
         [Header("To link")]
         public TrailZoneManager trailZoneManager;
@@ -43,7 +45,8 @@ namespace BlackBalls.Boids
         public float repulsionForce = 1f;
         public float imitationForce = 1f;
         public float followForce = 1f;
-        public float streamForce = 1f;
+        public float minStreamForce = 0.2f;
+        public float maxStreamForce = 1f;
 
         //public LimitBorder[] limitBorder;
 
@@ -53,6 +56,9 @@ namespace BlackBalls.Boids
 
         void Start()
         {
+            AkSoundEngine.SetRTPCValue("density", 0, gameObject);
+            AkSoundEngine.PostEvent("Play_musBlend", gameObject);
+
             // Get all stream points in the scene
             // Maybe we should use an octree
             StreamPoint[] p = GameObject.FindObjectsOfType<StreamPoint>();
@@ -67,8 +73,8 @@ namespace BlackBalls.Boids
                 List<BoidController> racepopulation = new List<BoidController>(races[r].population);
                 for (i = 0; i < races[r].population; ++i)
                 {
-                    x = Random.Range(-entitySpawnSurface.x / 2, entitySpawnSurface.x / 2);
-                    y = Random.Range(-entitySpawnSurface.y / 2, entitySpawnSurface.y / 2);
+                    x = UnityEngine.Random.Range(-entitySpawnSurface.x / 2, entitySpawnSurface.x / 2);
+                    y = UnityEngine.Random.Range(-entitySpawnSurface.y / 2, entitySpawnSurface.y / 2);
                     BoidController boid = Instantiate(races[r].prefab, new Vector3(x, y, 0), Quaternion.identity, ancester).GetComponent<BoidController>();
                     racepopulation.Add(boid);
                 }
@@ -78,30 +84,37 @@ namespace BlackBalls.Boids
 
         void Update()
         {
-            currentStreamForce = streamForce * (followersCount / 50);
+            currentStreamForce = minStreamForce + (maxStreamForce - minStreamForce) / Mathf.Max(20 - followersCount, 1);
             followersCount = 0;
 
             UpdateAllBoids();
             UpdateOtherOne();
-            
-            // Must update the OtherOne
+            //UpdatePlayer();
 
-<<<<<<< HEAD
-=======
-            //foreach (var boid in entities)
-            //{
-            //    if (boid == theOtherOne)
-            //    {
-            //        UpdateOtherOne();
-            //    }
-            //    else
-            //    {
-            //        UpdateBoid(boid);
-            //    }
-            //}
-
->>>>>>> Added player movement sound
+            if (followersCount > minFollowerCount)
+            {
+                minFollowerCount = Mathf.Min(13, followersCount);
+            }
+            //Debug.Log("RTPC value : " + Mathf.Max((followersCount) * 2, minFollowerCount));
+            AkSoundEngine.SetRTPCValue("density", Mathf.Max((followersCount) * 2, minFollowerCount), gameObject);
             //Debug.Log("Followers = " + followersCount);
+        }
+
+        private void UpdatePlayer()
+        {
+            Vector3 pos = player.transform.position;
+            Vector3 streaming = Vector3.zero; // courants
+
+            // Courants
+            foreach (var point in streamPoints)
+            {
+                if ((point.transform.position - pos).sqrMagnitude < streamDetectionRange * streamDetectionRange)
+                {
+                    streaming += point.Direction;
+                }
+
+                player.residualStreamVelocity = streaming;
+            }
         }
 
         private void UpdateAllBoids()
@@ -236,7 +249,7 @@ namespace BlackBalls.Boids
                 CheckLevelBorders(theOtherOne, pos);
 
                 // Apply to boid velocity
-                theOtherOne.targetVelocity = cohesion * cohesionForce
+                theOtherOne.targetVelocity = cohesion * followForce
                                     + repulsion * repulsionForce
                                     + imitation * imitationForce
                                     //+ follow * followForce

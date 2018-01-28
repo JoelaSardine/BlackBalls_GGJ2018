@@ -6,9 +6,9 @@ namespace BlackBalls
 {
     public class EntityController : MonoBehaviour
     {
-        public List<StreamZone> streams = new List<StreamZone>();
-        private List<Vector3> streamsVelo = new List<Vector3>();
-        private Vector3 residualStreamVelocity;
+        //public List<StreamZone> streams = new List<StreamZone>();
+        //private List<Vector3> streamsVelo = new List<Vector3>();
+        public Vector3 residualStreamVelocity;
 
         protected Vector3 finalVelocity;
         public Vector3 velocity;
@@ -25,14 +25,14 @@ namespace BlackBalls
         {
             finalVelocity = velocity;
             
-            if (trailVelocity.sqrMagnitude < 1f)
-            {
-                ApplyStreams(ref finalVelocity);
-            }
-            else
-            {
-                finalVelocity += trailVelocity.normalized;
-            }
+            //if (trailVelocity.sqrMagnitude < 1f)
+            //{
+            //    ApplyStreams(ref finalVelocity);
+            //}
+            //else
+            //{
+            //    finalVelocity += trailVelocity.normalized;
+            //}
 
             AtUpdate(ref finalVelocity);
 
@@ -68,39 +68,39 @@ namespace BlackBalls
             }
         }
 
-        public void AddStream(StreamZone stream)
-        {
-            if (!streams.Contains(stream))
-            {
-                streams.Add(stream);
-                streamsVelo.Add(Vector3.zero);
-            }
-        }
+        //public void AddStream(StreamZone stream)
+        //{
+        //    if (!streams.Contains(stream))
+        //    {
+        //        streams.Add(stream);
+        //        streamsVelo.Add(Vector3.zero);
+        //    }
+        //}
 
-        public void RemoveStream(StreamZone stream)
-        {
-            int i = streams.IndexOf(stream);
-            residualStreamVelocity += streamsVelo[i];
-            streams.RemoveAt(i);
-            streamsVelo.RemoveAt(i);
-        }
+        //public void RemoveStream(StreamZone stream)
+        //{
+        //    int i = streams.IndexOf(stream);
+        //    residualStreamVelocity += streamsVelo[i];
+        //    streams.RemoveAt(i);
+        //    streamsVelo.RemoveAt(i);
+        //}
 
-        private void ApplyStreams(ref Vector3 finalVelocity)
-        {
-            residualStreamVelocity *= (1 - drag);
+        //private void ApplyStreams(ref Vector3 finalVelocity)
+        //{
+        //    residualStreamVelocity *= (1 - drag);
 
-            for (int i = 0; i < streams.Count; i++)
-            {
-                streamsVelo[i] += streams[i].direction * Time.deltaTime;
-                if (streamsVelo[i].sqrMagnitude >= streams[i].maxForce * streams[i].maxForce)
-                {
-                    streamsVelo[i] = streamsVelo[i].normalized * streams[i].maxForce;
-                }
+        //    for (int i = 0; i < streams.Count; i++)
+        //    {
+        //        streamsVelo[i] += streams[i].direction * Time.deltaTime;
+        //        if (streamsVelo[i].sqrMagnitude >= streams[i].maxForce * streams[i].maxForce)
+        //        {
+        //            streamsVelo[i] = streamsVelo[i].normalized * streams[i].maxForce;
+        //        }
 
-                finalVelocity += streamsVelo[i];
-            }
+        //        finalVelocity += streamsVelo[i];
+        //    }
 
-            finalVelocity += residualStreamVelocity;
-        }
+        //    finalVelocity += residualStreamVelocity;
+        //}
     }
 }

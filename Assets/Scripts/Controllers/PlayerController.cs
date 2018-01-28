@@ -16,13 +16,11 @@ namespace BlackBalls
         float timer;
 
         public TrailZoneManager trailZoneManager;
-
-<<<<<<< HEAD
+        public Boids.BoidsManager boidsManager;
+        
         public Boids.SpecialBoid theOtherOne;
         private bool hasKnownLove = false;
-=======
         private bool startMovementSound = false;
->>>>>>> Added player movement sound
 
         void Start()
         {
@@ -30,21 +28,21 @@ namespace BlackBalls
 
         protected override void AtUpdate(ref Vector3 finalVelocity)
         {
+            //finalVelocity += residualStreamVelocity.normalized;
+
             // Receive Inputs
             velocity.x += Input.GetAxis("Horizontal") * acceleration;
             velocity.y += Input.GetAxis("Vertical") * acceleration;
 
             Vector2 inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             PlayMovementSound(inputs);
-
+            
             if (velocity.sqrMagnitude >= maxSpeed * maxSpeed)
             {
                 velocity = velocity.normalized * maxSpeed;
             }
 
             ManageTrailZone(finalVelocity.magnitude);
-
-            
         }
 
         private void PlayMovementSound(Vector2 inputs)
@@ -100,27 +98,41 @@ namespace BlackBalls
         {
             if (hasKnownLove)
             {
-                if (theOtherOne.isFollowingPlayer = true)
+                if (theOtherOne.isFollowingPlayer == true)
                 {
                     if (Vector3.SqrMagnitude(transform.position - theOtherOne.transform.position) >= 25.0f)
                     {
                         Debug.Log("Lost");
+                        AkSoundEngine.SetSwitch("companionMood", "negative", gameObject);
+                        theOtherOne.ChangeMaterial();
                         theOtherOne.isFollowingPlayer = false;
                     }
                 }
             }
-            else
+
+            if (Input.GetButtonDown("Calin"))
             {
-                if (Input.GetButtonDown("Calin"))
+                CallingLove();
+            }
+        }
+
+        private void Impulse() { }
+
+        private void CallingLove()
+        {
+            if (!hasKnownLove)
+            {
+                if (Vector3.SqrMagnitude(transform.position - theOtherOne.transform.position) <= 10.0f)
                 {
-                    if (Vector3.SqrMagnitude(transform.position - theOtherOne.transform.position) <= 10.0f)
-                    {
-                        Debug.Log("Calin OK");
-                        hasKnownLove = true;
-                        theOtherOne.isFollowingPlayer = true;
-                    }
+                    Debug.Log("Calin OK");
+                    AkSoundEngine.PostEvent("Play_companionMating", gameObject);
+                    AkSoundEngine.SetSwitch("companionMood", "positive", gameObject);
+                    hasKnownLove = true;
+                    theOtherOne.isFollowingPlayer = true;
                 }
             }
+            
+            AkSoundEngine.PostEvent("Play_catchCall", gameObject);
         }
     }
 }

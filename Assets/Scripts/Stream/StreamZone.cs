@@ -22,33 +22,33 @@ namespace BlackBalls
 
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            AtTriggerEnter(other);
-        }
+        //private void OnTriggerEnter(Collider other)
+        //{
+        //    AtTriggerEnter(other);
+        //}
 
-        private void OnTriggerExit(Collider other)
-        {
-            AtTriggerExit(other);
-        }
+        //private void OnTriggerExit(Collider other)
+        //{
+        //    AtTriggerExit(other);
+        //}
 
-        protected virtual void AtTriggerEnter(Collider other)
-        {
-            EntityController ec = other.GetComponent<EntityController>();
-            if (ec != null)
-            {
-                ec.AddStream(this);
-            }
-        }
+        //protected virtual void AtTriggerEnter(Collider other)
+        //{
+        //    EntityController ec = other.GetComponent<EntityController>();
+        //    if (ec != null)
+        //    {
+        //        ec.AddStream(this);
+        //    }
+        //}
 
-        protected virtual void AtTriggerExit(Collider other)
-        {
-            EntityController ec = other.GetComponent<EntityController>();
-            if (ec != null)
-            {
-                ec.RemoveStream(this);
-            }
-        }
+        //protected virtual void AtTriggerExit(Collider other)
+        //{
+        //    EntityController ec = other.GetComponent<EntityController>();
+        //    if (ec != null)
+        //    {
+        //        ec.RemoveStream(this);
+        //    }
+        //}
 
         private void OnDrawGizmosSelected()
         {

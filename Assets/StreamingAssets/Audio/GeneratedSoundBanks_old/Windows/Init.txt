@@ -1,0 +1,17 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1548586727	menuState			\Default Work Unit\menuState	
+
+State	ID	Name	State Group			Notes
+	28053628	menuOut	menuState			
+	508545877	menuIn	menuState			
+	748895195	None	menuState			
+	1626597175	menuCredit	menuState			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Audio Devices	ID	Name	Type				Notes
+	530303819	Communication	Communication			
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
