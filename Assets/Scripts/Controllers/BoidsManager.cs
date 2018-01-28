@@ -86,6 +86,21 @@ namespace BlackBalls.Boids
             
             // Must update the OtherOne
 
+<<<<<<< HEAD
+=======
+            //foreach (var boid in entities)
+            //{
+            //    if (boid == theOtherOne)
+            //    {
+            //        UpdateOtherOne();
+            //    }
+            //    else
+            //    {
+            //        UpdateBoid(boid);
+            //    }
+            //}
+
+>>>>>>> Added player movement sound
             //Debug.Log("Followers = " + followersCount);
         }
 

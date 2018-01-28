@@ -17,8 +17,12 @@ namespace BlackBalls
 
         public TrailZoneManager trailZoneManager;
 
+<<<<<<< HEAD
         public Boids.SpecialBoid theOtherOne;
         private bool hasKnownLove = false;
+=======
+        private bool startMovementSound = false;
+>>>>>>> Added player movement sound
 
         void Start()
         {
@@ -30,14 +34,40 @@ namespace BlackBalls
             velocity.x += Input.GetAxis("Horizontal") * acceleration;
             velocity.y += Input.GetAxis("Vertical") * acceleration;
 
+            Vector2 inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            PlayMovementSound(inputs);
+
             if (velocity.sqrMagnitude >= maxSpeed * maxSpeed)
             {
                 velocity = velocity.normalized * maxSpeed;
             }
 
             ManageTrailZone(finalVelocity.magnitude);
+
+            
         }
 
+        private void PlayMovementSound(Vector2 inputs)
+        {
+            if (inputs.sqrMagnitude > 0.1f)
+            {
+                //Debug.Log("PlaySound");
+                if(startMovementSound == false)
+                {
+                    AkSoundEngine.PostEvent("Play_swimIn", gameObject);
+                    startMovementSound = true;
+                }
+            }
+            else
+            {
+                if(startMovementSound == true)
+                {
+                    AkSoundEngine.PostEvent("Play_swimOut", gameObject);
+                    startMovementSound = false;
+                }
+            }
+            
+        }
 
         private void ManageTrailZone(float finalVelocity)
         {
