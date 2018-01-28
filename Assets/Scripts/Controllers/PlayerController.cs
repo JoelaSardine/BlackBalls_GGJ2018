@@ -9,6 +9,9 @@ namespace BlackBalls
         //private Rigidbody rb;
         public float acceleration = 1f;
         public float maxSpeed = 1f;
+		public float dashSpeed = 10f;
+		public float dashDelay = 5f;
+		public float dashTime = 2f;
 
         public Transform zonesParent;
         public GameObject trailzonePrefab;
@@ -17,15 +20,16 @@ namespace BlackBalls
 
         public TrailZoneManager trailZoneManager;
 
-<<<<<<< HEAD
         public Boids.SpecialBoid theOtherOne;
         private bool hasKnownLove = false;
-=======
         private bool startMovementSound = false;
->>>>>>> Added player movement sound
+
+		private float lastDash = 0f;
+		private float oldMaxSpeed;
 
         void Start()
         {
+			oldMaxSpeed = maxSpeed;
         }
 
         protected override void AtUpdate(ref Vector3 finalVelocity)
@@ -121,6 +125,22 @@ namespace BlackBalls
                     }
                 }
             }
+
+			float now = Time.time;
+
+			if (now - lastDash >= dashDelay) {
+				if (Input.GetButtonDown ("Dash")) {
+					lastDash = now;
+				}
+			}
+
+			if (now - lastDash <= dashTime) {
+				Debug.Log ("Dashing");
+
+				maxSpeed = dashSpeed;
+			} else {
+				maxSpeed = oldMaxSpeed;
+			}
         }
     }
 }
