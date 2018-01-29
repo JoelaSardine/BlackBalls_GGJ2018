@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 801576207d5483241a00fa2824a1909e
+timeCreated: 1517136346
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Caladea
+  fontNames:
+  - Caladea
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 482b45a294bedbb4cb9fba2c0a526c61, type: 3}
+  - {fileID: 12800000, guid: 3d81a90c8cfe5f84f8dc92cb2b239584, type: 3}
+  - {fileID: 12800000, guid: 07567faed02b18142ba329edb82a7b6d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
