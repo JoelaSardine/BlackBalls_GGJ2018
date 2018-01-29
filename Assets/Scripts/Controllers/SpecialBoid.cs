@@ -10,6 +10,7 @@ namespace BlackBalls.Boids
         public Renderer myRenderer;
 
         public bool isFollowingPlayer = false;
+        public bool hasKnownLove = false;
 
         private float timer = 10f;
 
@@ -33,7 +34,10 @@ namespace BlackBalls.Boids
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                timer = Random.Range(5f, 20f);
+                if (hasKnownLove)
+                    timer = Random.Range(5f, 15f);
+                else
+                    timer = Random.Range(2f, 10f);
                 AkSoundEngine.PostEvent("Play_companion", gameObject);
             }
         }

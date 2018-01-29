@@ -32,6 +32,11 @@ public class MenuControllerToussa : MonoBehaviour
         AkSoundEngine.SetState("menuState", "menuIn");
     }
 
+    public void OnClickQuit()
+    {
+        Application.Quit();
+    }
+
     private void Update()
     {
         timer -= Time.deltaTime;
